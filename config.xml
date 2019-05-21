@@ -1,0 +1,64 @@
+<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Name>NnuuTool</Name>
+    <AddInID>{2a425360-898c-4826-afef-db3d1c1a0f47}</AddInID>
+    <Description>Addin para generar nucleos urbanos</Description>
+    <Version>0.1</Version>
+    <Image>Images\houses.png</Image>
+    <Author>Jorge Yupanqui</Author>
+    <Company>INEI-Dtdis</Company>
+    <Date>04/08/2019</Date>
+    <Targets>
+        <Target name="Desktop" version="10.1"/>
+    </Targets>
+    <AddIn language="PYTHON" library="NnuuTool_addin.py" namespace="NnuuTool_addin">
+        <ArcMap>
+            <Commands>
+                <Button caption="Cargar Informaci&#243;n" category="NnuuTool" class="LoadData"
+                        id="NnuuTool_addin.loaddata" image="Images\folder.png"
+                        message="Cargar la informaci&#243;n de manzanas" tip="">
+                    <Help heading=""/>
+                </Button>
+                <Button caption="Generar Polígonos" category="NnuuTool" class="GenPolig"
+                        id="NnuuTool_addin.genpolig" image="Images\add.png"
+                        message="Genera pol&#237;gonos de n&#250;cleo urbano" tip="">
+                    <Help heading=""/>
+                </Button>
+                <Button caption="Generar Topolog&#237;a" category="NnuuTool" class="GenTopo" id="NnuuTool_addin.gentopo"
+                        image="Images\overlap.png" message="Genera topolog&#237;a de Pol&#237;gonos" tip="">
+                    <Help heading=""/>
+                </Button>
+                <Button caption="Generar c&#243;digos nnuu" category="NnuuTool" class="GenCodes"
+                        id="NnuuTool_addin.gencodes" image="Images\code.png"
+                        message="Genera c&#243;digos de n&#250;cleo urbano" tip="">
+                    <Help heading=""/>
+                </Button>
+                <ComboBox caption="" category="NnuuTool" class="NomDist" id="NnuuTool_addin.nomdist"
+                          itemSizeString="WWWWWWWWWWWWWWWWWW" message="Nombre de Distrito" rows="4" sizeString="WWWWWW" tip="Nomdist">
+                    <Help heading=""/>
+                </ComboBox>
+                <Button caption="Ayuda" category="NnuuTool" class="Info" id="NnuuTool_addin.info"
+                        image="Images\info.png" message="" tip="">
+                    <Help heading=""/>
+                </Button>
+            </Commands>
+            <Extensions>
+            </Extensions>
+            <Toolbars>
+                <Toolbar caption="Generar c&#243;digos" category="NnuuTool" id="NnuuTool_addin.toolbar"
+                         showInitially="true">
+                    <Items>
+                        <Button refID="NnuuTool_addin.loaddata"/>
+                        <ComboBox refID="NnuuTool_addin.nomdist"/>
+                        <Button refID="NnuuTool_addin.genpolig"/>
+                        <Button refID="NnuuTool_addin.gentopo"/>
+                        <Button refID="NnuuTool_addin.gencodes"/>
+                        <Button refID="NnuuTool_addin.info"/>
+                    </Items>
+                </Toolbar>
+            </Toolbars>
+            <Menus>
+            </Menus>
+        </ArcMap>
+    </AddIn>
+</ESRI.Configuration>
